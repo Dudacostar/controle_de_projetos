@@ -60,7 +60,7 @@ export function TasksList() {
                 {task.priority}
               </span>
               {(() => {
-                const member = teamMembers[task.assignee];
+                const member = members[task.assignee];
                 return (
                   <Avatar className="h-6 w-6">
                     <AvatarImage src={member.avatar} alt={member.name} />
