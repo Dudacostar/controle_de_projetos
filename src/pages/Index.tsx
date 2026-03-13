@@ -3,6 +3,7 @@ import { ProjectsList } from "@/components/dashboard/ProjectsList";
 import { TasksList } from "@/components/dashboard/TasksList";
 import { TeamOverview } from "@/components/dashboard/TeamOverview";
 import { Bell, Search, FolderKanban } from "lucide-react";
+import mariaEduardaImg from "@/assets/maria-eduarda.png";
 
 const Index = () => {
   return (
@@ -27,9 +28,7 @@ const Index = () => {
             <Bell className="h-4 w-4 text-muted-foreground" />
             <span className="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-destructive" />
           </button>
-          <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-xs font-semibold text-primary-foreground">
-            ME
-          </div>
+          <img src={mariaEduardaImg} alt="Maria Eduarda" className="h-8 w-8 rounded-full object-cover" />
         </div>
       </header>
 

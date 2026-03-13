@@ -1,10 +1,14 @@
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import mariaEduardaImg from "@/assets/maria-eduarda.png";
+import marcianoImg from "@/assets/marciano-rodrigues.png";
+import mateusImg from "@/assets/mateus-costa.png";
+import mariaDeborahImg from "@/assets/maria-deborah.png";
 
 const members = [
-  { name: "Maria Eduarda", role: "Designer Lead", initials: "ME", tasks: 8, completed: 5 },
-  { name: "Marciano Rodrigues", role: "Frontend Dev", initials: "MR", tasks: 6, completed: 4 },
-  { name: "Mateus da Costa", role: "Backend Dev", initials: "MC", tasks: 10, completed: 7 },
-  { name: "Maria Déborah", role: "Product Manager", initials: "MD", tasks: 5, completed: 3 },
+  { name: "Maria Eduarda", role: "Designer Lead", initials: "ME", tasks: 8, completed: 5, photo: mariaEduardaImg },
+  { name: "Marciano Rodrigues", role: "Frontend Dev", initials: "MR", tasks: 6, completed: 4, photo: marcianoImg },
+  { name: "Mateus da Costa", role: "Backend Dev", initials: "MC", tasks: 10, completed: 7, photo: mateusImg },
+  { name: "Maria Déborah", role: "Product Manager", initials: "MD", tasks: 5, completed: 3, photo: mariaDeborahImg },
 ];
 
 export function TeamOverview() {
@@ -19,6 +23,7 @@ export function TeamOverview() {
           return (
             <div key={member.initials} className="flex items-center gap-3">
               <Avatar className="h-9 w-9">
+                <AvatarImage src={member.photo} alt={member.name} className="object-cover" />
                 <AvatarFallback className="text-xs bg-primary/10 text-primary font-semibold">
                   {member.initials}
                 </AvatarFallback>
