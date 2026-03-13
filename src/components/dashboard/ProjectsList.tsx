@@ -1,6 +1,10 @@
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import mariaEduardaImg from "@/assets/maria-eduarda.png";
+import marcianoImg from "@/assets/marciano-rodrigues.png";
+import mateusImg from "@/assets/mateus-costa.png";
+import mariaDeborahImg from "@/assets/maria-deborah.png";
 
 type ProjectStatus = "em_andamento" | "planejamento" | "concluido" | "atrasado";
 
@@ -9,6 +13,13 @@ const statusConfig: Record<ProjectStatus, { label: string; className: string }> 
   planejamento: { label: "Planejamento", className: "bg-info/10 text-info border-info/20" },
   concluido: { label: "Concluído", className: "bg-success/10 text-success border-success/20" },
   atrasado: { label: "Atrasado", className: "bg-destructive/10 text-destructive border-destructive/20" },
+};
+
+const teamMembers = {
+  MR: { name: "Marciano Rodrigues", avatar: marcianoImg },
+  ME: { name: "Maria Eduarda", avatar: mariaEduardaImg },
+  MC: { name: "Mateus Costa", avatar: mateusImg },
+  MD: { name: "Maria Deborah", avatar: mariaDeborahImg },
 };
 
 const projects = [
@@ -74,13 +85,17 @@ export function ProjectsList() {
               </div>
               <div className="flex items-center justify-between mt-3">
                 <div className="flex -space-x-2">
-                  {project.team.map((initials) => (
-                    <Avatar key={initials} className="h-6 w-6 border-2 border-card">
-                      <AvatarFallback className="text-[9px] bg-secondary font-medium">
-                        {initials}
-                      </AvatarFallback>
-                    </Avatar>
-                  ))}
+                  {project.team.map((memberKey) => {
+                    const member = teamMembers[memberKey];
+                    return (
+                      <Avatar key={memberKey} className="h-6 w-6 border-2 border-card">
+                        <AvatarImage src={member.avatar} alt={member.name} />
+                        <AvatarFallback className="text-[9px] bg-secondary font-medium">
+                          {memberKey}
+                        </AvatarFallback>
+                      </Avatar>
+                    );
+                  })}
                 </div>
                 <span className="text-xs text-muted-foreground">{project.deadline}</span>
               </div>
