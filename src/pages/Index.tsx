@@ -3,6 +3,7 @@ import { ProjectsList } from "@/components/dashboard/ProjectsList";
 import { TasksList } from "@/components/dashboard/TasksList";
 import { TeamOverview } from "@/components/dashboard/TeamOverview";
 import { Bell, Search, FolderKanban } from "lucide-react";
+import mariaEduardaImg from "@/assets/maria-eduarda.png";
 
 const Index = () => {
   return (
