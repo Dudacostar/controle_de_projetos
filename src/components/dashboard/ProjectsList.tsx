@@ -34,7 +34,7 @@ const projects = [
     status: "concluido" as ProjectStatus,
     progress: 100,
     deadline: "28 Fev 2026",
-    team: ["JD", "MR"],
+    team: ["ME", "MR"],
   },
 ];
 

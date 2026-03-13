@@ -18,8 +18,8 @@ const statusIcons: Record<TaskStatus, React.ReactNode> = {
 };
 
 const tasks = [
-  { title: "Reunião de kick-off", project: "Dashboard Analytics", assignee: "PT", priority: "media" as TaskPriority, status: "pendente" as TaskStatus, due: "Amanhã" },
-  { title: "Documentação da API", project: "App Mobile v2", assignee: "AS", priority: "baixa" as TaskPriority, status: "concluida" as TaskStatus, due: "12 Mar" },
+  { title: "Reunião de kick-off", project: "Dashboard Analytics", assignee: "MD", priority: "media" as TaskPriority, status: "pendente" as TaskStatus, due: "Amanhã" },
+  { title: "Documentação da API", project: "App Mobile v2", assignee: "MR", priority: "baixa" as TaskPriority, status: "concluida" as TaskStatus, due: "12 Mar" },
 ];
 
 export function TasksList() {
