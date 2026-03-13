@@ -18,7 +18,7 @@ const projects = [
     status: "em_andamento" as ProjectStatus,
     progress: 72,
     deadline: "15 Abr 2026",
-    team: ["MR", "AS", "LC"],
+    team: ["MR", "ME", "MC"],
   },
   {
     name: "App Mobile v2",
