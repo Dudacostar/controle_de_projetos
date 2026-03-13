@@ -1,5 +1,9 @@
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { CheckCircle2, Circle, Clock, AlertCircle } from "lucide-react";
+import mariaEduardaImg from "@/assets/maria-eduarda.png";
+import marcianoImg from "@/assets/marciano-rodrigues.png";
+import mateusImg from "@/assets/mateus-costa.png";
+import mariaDeborahImg from "@/assets/maria-deborah.png";
 
 type TaskPriority = "alta" | "media" | "baixa";
 type TaskStatus = "concluida" | "em_andamento" | "pendente" | "atrasada";
@@ -8,6 +12,13 @@ const priorityColors: Record<TaskPriority, string> = {
   alta: "text-destructive",
   media: "text-warning",
   baixa: "text-success",
+};
+
+const members = {
+  MR: { name: "Marciano Rodrigues", avatar: marcianoImg },
+  ME: { name: "Maria Eduarda", avatar: mariaEduardaImg },
+  MC: { name: "Mateus Costa", avatar: mateusImg },
+  MD: { name: "Maria Deborah", avatar: mariaDeborahImg },
 };
 
 const statusIcons: Record<TaskStatus, React.ReactNode> = {
@@ -48,11 +59,17 @@ export function TasksList() {
               <span className={`text-[10px] font-semibold uppercase ${priorityColors[task.priority]}`}>
                 {task.priority}
               </span>
-              <Avatar className="h-6 w-6">
-                <AvatarFallback className="text-[9px] bg-secondary font-medium">
-                  {task.assignee}
-                </AvatarFallback>
-              </Avatar>
+              {(() => {
+                const member = teamMembers[task.assignee];
+                return (
+                  <Avatar className="h-6 w-6">
+                    <AvatarImage src={member.avatar} alt={member.name} />
+                    <AvatarFallback className="text-[9px] bg-secondary font-medium">
+                      {task.assignee}
+                    </AvatarFallback>
+                  </Avatar>
+                );
+             })()}
               <span className="text-xs text-muted-foreground w-12 text-right">{task.due}</span>
             </div>
           </div>
