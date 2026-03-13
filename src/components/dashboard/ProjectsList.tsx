@@ -18,7 +18,7 @@ const projects = [
     status: "em_andamento" as ProjectStatus,
     progress: 72,
     deadline: "15 Abr 2026",
-    team: ["MR", "AS", "LC"],
+    team: ["MR", "ME", "MC"],
   },
   {
     name: "App Mobile v2",
@@ -26,7 +26,7 @@ const projects = [
     status: "em_andamento" as ProjectStatus,
     progress: 45,
     deadline: "30 Mai 2026",
-    team: ["JD", "PT"],
+    team: ["MC", "MD"],
   },
   {
     name: "Migração Cloud",
@@ -34,7 +34,7 @@ const projects = [
     status: "concluido" as ProjectStatus,
     progress: 100,
     deadline: "28 Fev 2026",
-    team: ["JD", "MR"],
+    team: ["ME", "MR"],
   },
 ];
 
