@@ -28,7 +28,7 @@ const Index = () => {
             <span className="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-destructive" />
           </button>
           <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-xs font-semibold text-primary-foreground">
-            JD
+            ME
           </div>
         </div>
       </header>
