@@ -22,7 +22,7 @@ const projects = [
   },
   {
     name: "App Mobile v2",
-    client: "Cliente Beta",
+    client: "Cliente: Wave to Earth",
     status: "em_andamento" as ProjectStatus,
     progress: 45,
     deadline: "30 Mai 2026",
