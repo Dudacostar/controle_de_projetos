@@ -26,7 +26,7 @@ const projects = [
     status: "em_andamento" as ProjectStatus,
     progress: 45,
     deadline: "30 Mai 2026",
-    team: ["JD", "PT"],
+    team: ["MC", "MD"],
   },
   {
     name: "Migração Cloud",
