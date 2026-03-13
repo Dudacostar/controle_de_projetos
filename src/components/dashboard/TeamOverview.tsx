@@ -1,11 +1,10 @@
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 const members = [
-  { name: "Marina Rocha", role: "Designer Lead", initials: "MR", tasks: 8, completed: 5 },
-  { name: "João Dias", role: "Dev Full-Stack", initials: "JD", tasks: 12, completed: 9 },
-  { name: "Ana Santos", role: "Frontend Dev", initials: "AS", tasks: 6, completed: 4 },
-  { name: "Lucas Costa", role: "Backend Dev", initials: "LC", tasks: 10, completed: 7 },
-  { name: "Paulo Torres", role: "Product Manager", initials: "PT", tasks: 5, completed: 3 },
+  { name: "Maria Eduarda", role: "Designer Lead", initials: "ME", tasks: 8, completed: 5 },
+  { name: "Marciano Rodrigues", role: "Frontend Dev", initials: "MR", tasks: 6, completed: 4 },
+  { name: "Mateus da Costa", role: "Backend Dev", initials: "MC", tasks: 10, completed: 7 },
+  { name: "Maria Déborah", role: "Product Manager", initials: "MD", tasks: 5, completed: 3 },
 ];
 
 export function TeamOverview() {
