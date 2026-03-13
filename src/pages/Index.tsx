@@ -12,7 +12,7 @@ const Index = () => {
           <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
             <FolderKanban className="h-4 w-4 text-primary-foreground" />
           </div>
-          <span className="font-display font-bold text-sm">ProjectHub</span>
+          <span className="font-display font-bold text-sm">Controle de Projetos</span>
           <div className="hidden sm:flex items-center gap-2 bg-muted rounded-lg px-3 py-1.5 ml-4">
             <Search className="h-4 w-4 text-muted-foreground" />
             <input
