@@ -29,22 +29,6 @@ const projects = [
     team: ["JD", "PT"],
   },
   {
-    name: "Sistema ERP",
-    client: "Cliente Gamma",
-    status: "atrasado" as ProjectStatus,
-    progress: 33,
-    deadline: "01 Mar 2026",
-    team: ["MR", "LC", "JD", "AS"],
-  },
-  {
-    name: "Dashboard Analytics",
-    client: "Interno",
-    status: "planejamento" as ProjectStatus,
-    progress: 10,
-    deadline: "20 Jun 2026",
-    team: ["PT", "AS"],
-  },
-  {
     name: "Migração Cloud",
     client: "Cliente Delta",
     status: "concluido" as ProjectStatus,
