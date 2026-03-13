@@ -30,7 +30,7 @@ const projects = [
   },
   {
     name: "Migração Cloud",
-    client: "Cliente Delta",
+    client: "Cliente: The Cab",
     status: "concluido" as ProjectStatus,
     progress: 100,
     deadline: "28 Fev 2026",
