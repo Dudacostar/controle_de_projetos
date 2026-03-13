@@ -15,7 +15,7 @@ const statusConfig: Record<ProjectStatus, { label: string; className: string }> 
   atrasado: { label: "Atrasado", className: "bg-destructive/10 text-destructive border-destructive/20" },
 };
 
-const teamMembers = {
+const members = {
   MR: { name: "Marciano Rodrigues", avatar: marcianoImg },
   ME: { name: "Maria Eduarda", avatar: mariaEduardaImg },
   MC: { name: "Mateus Costa", avatar: mateusImg },
@@ -86,7 +86,7 @@ export function ProjectsList() {
               <div className="flex items-center justify-between mt-3">
                 <div className="flex -space-x-2">
                   {project.team.map((memberKey) => {
-                    const member = teamMembers[memberKey];
+                    const member = members[memberKey];
                     return (
                       <Avatar key={memberKey} className="h-6 w-6 border-2 border-card">
                         <AvatarImage src={member.avatar} alt={member.name} />
