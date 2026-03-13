@@ -14,7 +14,7 @@ const statusConfig: Record<ProjectStatus, { label: string; className: string }> 
 const projects = [
   {
     name: "Redesign do Portal",
-    client: "Cliente Alpha",
+    client: "Cliente: Olivia Rodrigo",
     status: "em_andamento" as ProjectStatus,
     progress: 72,
     deadline: "15 Abr 2026",
