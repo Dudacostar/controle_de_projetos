@@ -18,12 +18,8 @@ const statusIcons: Record<TaskStatus, React.ReactNode> = {
 };
 
 const tasks = [
-  { title: "Revisar wireframes do portal", project: "Redesign do Portal", assignee: "MR", priority: "alta" as TaskPriority, status: "em_andamento" as TaskStatus, due: "Hoje" },
-  { title: "Configurar CI/CD pipeline", project: "App Mobile v2", assignee: "JD", priority: "alta" as TaskPriority, status: "atrasada" as TaskStatus, due: "Ontem" },
   { title: "Reunião de kick-off", project: "Dashboard Analytics", assignee: "PT", priority: "media" as TaskPriority, status: "pendente" as TaskStatus, due: "Amanhã" },
-  { title: "Testes de integração ERP", project: "Sistema ERP", assignee: "LC", priority: "alta" as TaskPriority, status: "em_andamento" as TaskStatus, due: "14 Mar" },
   { title: "Documentação da API", project: "App Mobile v2", assignee: "AS", priority: "baixa" as TaskPriority, status: "concluida" as TaskStatus, due: "12 Mar" },
-  { title: "Deploy ambiente staging", project: "Redesign do Portal", assignee: "JD", priority: "media" as TaskPriority, status: "pendente" as TaskStatus, due: "16 Mar" },
 ];
 
 export function TasksList() {
