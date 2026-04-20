@@ -4,15 +4,36 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 
 const Login = () => {
   const navigate = useNavigate();
 
-  const handleEntrar = (e: FormEvent) => {
-    e.preventDefault();
+  const handleEntrar = async (e: FormEvent) => {
+  e.preventDefault();
+
+  const response = await fetch("http://localhost:3001/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      login,
+      senha,
+    }),
+  });
+
+  const data = await response.json();
+
+  if (data.message === "Login OK") {
     navigate("/dashboard");
-  };
+  } else {
+    alert(data.message);
+  }
+};
+
+  const [login, setLogin] = useState("");
+  const [senha, setSenha] = useState("");
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background p-4">
@@ -28,11 +49,23 @@ const Login = () => {
         <form onSubmit={handleEntrar} className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="usuario">Usuário</Label>
-            <Input id="usuario" type="text" placeholder="Digite seu usuário" />
+            <Input 
+              id="usuario" 
+              type="text" 
+              placeholder="Digite seu usuário" 
+              value={login}
+              onChange={(e) => setLogin(e.target.value)}
+            />
           </div>
           <div className="space-y-2">
             <Label htmlFor="senha">Senha</Label>
-            <Input id="senha" type="password" placeholder="Digite sua senha" />
+            <Input 
+              id="senha" 
+              type="password" 
+              placeholder="Digite sua senha" 
+              value={senha}
+              onChange={(e) => setSenha(e.target.value)}
+            />
           </div>
 
           <div className="flex flex-col gap-2 pt-2">
