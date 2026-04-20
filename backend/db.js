@@ -1,6 +1,6 @@
 const mysql = require("mysql2");
 
-const db = mysql.createConnection({
+const db = mysql.createPool({
   host: "hwyvxn.h.filess.io",
   user: "gestao_de_projetos_strongyet",
   password: "Gestao2025",
@@ -8,14 +8,17 @@ const db = mysql.createConnection({
   port: 61002,
   waitForConnections: true,
   connectionLimit: 5,
-  queueLimit: 0
+  queueLimit: 0,
+  enableKeepAlive: true,
+  keepAliveInitialDelay: 0
 });
 
-db.connect((err) => {
+db.getConnection((err, connection) => {
   if (err) {
     console.log("Erro ao conectar:", err);
   } else {
-    console.log("Conectado ao banco");
+    console.log("Conectado ao banco!");
+    connection.release();
   }
 });
 
