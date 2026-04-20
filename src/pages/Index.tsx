@@ -2,10 +2,18 @@ import { StatsCards } from "@/components/dashboard/StatsCards";
 import { ProjectsList } from "@/components/dashboard/ProjectsList";
 import { TasksList } from "@/components/dashboard/TasksList";
 import { TeamOverview } from "@/components/dashboard/TeamOverview";
-import { Bell, Search, FolderKanban } from "lucide-react";
+import { Bell, Search, FolderKanban, LogOut } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import mariaEduardaImg from "@/assets/maria-eduarda.png";
 
 const Index = () => {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-background">
       <header className="h-14 flex items-center justify-between border-b px-6 bg-card">
@@ -28,7 +36,23 @@ const Index = () => {
             <Bell className="h-4 w-4 text-muted-foreground" />
             <span className="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-destructive" />
           </button>
-          <img src={mariaEduardaImg} alt="Maria Eduarda" className="h-8 w-8 rounded-full object-cover" />
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button className="rounded-full focus:outline-none focus:ring-2 focus:ring-ring">
+                <img
+                  src={mariaEduardaImg}
+                  alt="Maria Eduarda"
+                  className="h-8 w-8 rounded-full object-cover"
+                />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onClick={() => navigate("/")}>
+                <LogOut className="h-4 w-4 mr-2" />
+                Sair
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </header>
 
