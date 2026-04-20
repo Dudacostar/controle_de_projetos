@@ -12,7 +12,7 @@ const Cadastro = () => {
   const handleSalvar = async (e: FormEvent) => {
   e.preventDefault();
 
-  const response = await fetch("http://localhost:3001/register", {
+  const response = await fetch("https://backend-projetos.onrender.com/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
