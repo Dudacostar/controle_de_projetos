@@ -17,20 +17,22 @@ const Login = () => {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      login,
-      senha,
-    }),
+    body: JSON.stringify({ login, senha }),
   });
 
   const data = await response.json();
+  console.log(data);
 
-  if (data.message === "Login OK") {
-    navigate("/dashboard");
-  } else {
-    alert(data.message);
-  }
-};
+  if (!response.ok) {
+  alert(data.message || "Erro no login");
+  return;
+}
+
+if (data.message === "Login OK") {
+  navigate("/dashboard");
+} else {
+  alert(data.message);
+}
 
   const [login, setLogin] = useState("");
   const [senha, setSenha] = useState("");
