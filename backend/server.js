@@ -5,7 +5,14 @@ const bcrypt = require("bcrypt");
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://controle-de-projetos-nine.vercel.app"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 app.use(express.json());
 
 app.post("/register", async (req, res) => {
