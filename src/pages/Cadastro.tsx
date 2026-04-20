@@ -84,6 +84,14 @@ const Cadastro = () => {
           <div className="pt-2">
             <Button type="submit" className="w-full">Salvar</Button>
           </div>
+          <Button
+            type="button"
+            variant="outline"
+            className="w-full"
+            onClick={() => navigate("/")}
+          >
+            Voltar
+          </Button>
         </form>
       </Card>
     </div>
