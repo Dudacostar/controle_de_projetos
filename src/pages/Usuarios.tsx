@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, Users, FolderKanban } from "lucide-react";
+import { ArrowLeft, Users, FolderKanban, Plus } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   Table,
   TableBody,
@@ -42,14 +43,20 @@ const Usuarios = () => {
             Voltar
           </button>
 
-          <div>
-            <h1 className="text-2xl font-bold font-display flex items-center gap-2">
-              <Users className="h-6 w-6" />
-              Usuários Cadastrados
-            </h1>
-            <p className="text-sm text-muted-foreground mt-1">
-              Listagem de todos os usuários do sistema
-            </p>
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-2xl font-bold font-display flex items-center gap-2">
+                <Users className="h-6 w-6" />
+                Usuários Cadastrados
+              </h1>
+              <p className="text-sm text-muted-foreground mt-1">
+                Listagem de todos os usuários do sistema
+              </p>
+            </div>
+            <Button onClick={() => navigate("/cadastro")} className="flex items-center gap-2">
+              <Plus className="h-4 w-4" />
+              Cadastrar usuário
+            </Button>
           </div>
 
           <Card>
