@@ -40,4 +40,59 @@ const Cadastro = () => {
     <div className="min-h-screen flex items-center justify-center bg-background p-4">
       <Card className="w-full max-w-md p-8 space-y-6">
         <div className="flex flex-col items-center gap-3 text-center">
-          <div className="h-12 w-12 rounded-lg bg-primary flex items
+          <div className="h-12 w-12 rounded-lg bg-primary flex items-center justify-center">
+            <FolderKanban className="h-6 w-6 text-primary-foreground" />
+          </div>
+          <h1 className="text-2xl font-bold font-display">Cadastrar Usuário</h1>
+        </div>
+
+        <form onSubmit={handleSalvar} className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="nome">Nome</Label>
+            <Input
+              id="nome"
+              type="text"
+              placeholder="Digite seu nome"
+              value={nome}
+              onChange={(e) => setNome(e.target.value)}
+            />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="login">Login</Label>
+            <Input
+              id="login"
+              type="text"
+              placeholder="Digite seu login"
+              value={login}
+              onChange={(e) => setLogin(e.target.value)}
+            />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="senha">Senha</Label>
+            <Input
+              id="senha"
+              type="password"
+              placeholder="Digite sua senha"
+              value={senha}
+              onChange={(e) => setSenha(e.target.value)}
+            />
+          </div>
+
+          <div className="flex flex-col gap-2 pt-2">
+            <Button type="submit" className="w-full">Cadastrar</Button>
+            <Button
+              type="button"
+              variant="outline"
+              className="w-full"
+              onClick={() => navigate(origem)}
+            >
+              Voltar
+            </Button>
+          </div>
+        </form>
+      </Card>
+    </div>
+  );
+};
+
+export default Cadastro;
