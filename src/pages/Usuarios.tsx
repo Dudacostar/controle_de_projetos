@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, Users, FolderKanban, Plus } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowLeft, Users, FolderKanban } from "lucide-react";
 import {
   Table,
   TableBody,
@@ -10,17 +9,18 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
-const usuariosMock = [
-  { id: 1, nome: "Maria Eduarda", login: "maria.eduarda" },
-  { id: 2, nome: "João Silva", login: "joao.silva" },
-  { id: 3, nome: "Ana Costa", login: "ana.costa" },
-  { id: 4, nome: "Pedro Souza", login: "pedro.souza" },
-  { id: 5, nome: "Juliana Lima", login: "juliana.lima" },
-];
+import { useEffect, useState } from "react";
 
 const Usuarios = () => {
   const navigate = useNavigate();
+  const [usuarios, setUsuarios] = useState([]);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_API_URL}/usuarios`)
+      .then((res) => res.json())
+      .then((data) => setUsuarios(data))
+      .catch((err) => console.error("Erro ao buscar usuários:", err));
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -32,35 +32,24 @@ const Usuarios = () => {
           <span className="font-display font-bold text-sm">Controle de Projetos</span>
         </div>
       </header>
-
       <main className="flex-1 overflow-auto p-6">
         <div className="max-w-4xl mx-auto space-y-6">
-          <Button
-            variant="outline"
-            size="sm"
+          <button
             onClick={() => navigate("/dashboard")}
-            className="flex items-center gap-2 w-fit"
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
-            Voltar para o início
-          </Button>
-
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-2xl font-bold font-display flex items-center gap-2">
-                <Users className="h-6 w-6" />
-                Usuários Cadastrados
-              </h1>
-              <p className="text-sm text-muted-foreground mt-1">
-                Listagem de todos os usuários do sistema
-              </p>
-            </div>
-            <Button onClick={() => navigate("/cadastro")} className="flex items-center gap-2">
-              <Plus className="h-4 w-4" />
-              Cadastrar usuário
-            </Button>
+            Voltar
+          </button>
+          <div>
+            <h1 className="text-2xl font-bold font-display flex items-center gap-2">
+              <Users className="h-6 w-6" />
+              Usuários Cadastrados
+            </h1>
+            <p className="text-sm text-muted-foreground mt-1">
+              Listagem de todos os usuários do sistema
+            </p>
           </div>
-
           <Card>
             <CardHeader>
               <CardTitle className="text-base">Usuários</CardTitle>
@@ -74,8 +63,8 @@ const Usuarios = () => {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {usuariosMock.map((usuario) => (
-                  <TableRow key={usuario.id}>
+                  {usuarios.map((usuario: any) => (
+                    <TableRow key={usuario.usuario_id}>
                       <TableCell className="font-medium">{usuario.nome}</TableCell>
                       <TableCell>{usuario.login}</TableCell>
                     </TableRow>
