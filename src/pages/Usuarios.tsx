@@ -35,13 +35,15 @@ const Usuarios = () => {
 
       <main className="flex-1 overflow-auto p-6">
         <div className="max-w-4xl mx-auto space-y-6">
-          <button
+          <Button
+            variant="outline"
+            size="sm"
             onClick={() => navigate("/dashboard")}
-            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            className="flex items-center gap-2 w-fit"
           >
             <ArrowLeft className="h-4 w-4" />
-            Voltar
-          </button>
+            Voltar para o início
+          </Button>
 
           <div className="flex items-center justify-between">
             <div>
