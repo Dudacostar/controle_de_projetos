@@ -93,6 +93,29 @@ app.get("/usuarios", (req, res) => {
   );
 });
 
+app.put("/usuarios/:id", (req, res) => {
+  const { nome, login } = req.body;
+  db.query(
+    "UPDATE tbUsuarios SET nome = ?, login = ? WHERE usuario_id = ?",
+    [nome, login, req.params.id],
+    (err) => {
+      if (err) return res.status(500).json({ message: "Erro ao editar" });
+      res.json({ message: "Usuário atualizado" });
+    }
+  );
+});
+
+app.delete("/usuarios/:id", (req, res) => {
+  db.query(
+    "DELETE FROM tbUsuarios WHERE usuario_id = ?",
+    [req.params.id],
+    (err) => {
+      if (err) return res.status(500).json({ message: "Erro ao apagar" });
+      res.json({ message: "Usuário apagado" });
+    }
+  );
+});
+
 const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => {
