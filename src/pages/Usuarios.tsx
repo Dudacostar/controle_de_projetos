@@ -76,10 +76,9 @@ const Usuarios = () => {
                 </TableHeader>
                 <TableBody>
                   {usuariosMock.map((usuario) => (
-                    <TableRow key={usuario.id}>
+                  <TableRow key={usuario.id}>
                       <TableCell className="font-medium">{usuario.nome}</TableCell>
                       <TableCell>{usuario.login}</TableCell>
-                      <TableCell>{usuario.perfil}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
