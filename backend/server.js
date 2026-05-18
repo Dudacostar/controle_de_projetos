@@ -81,6 +81,18 @@ app.post("/login", (req, res) => {
   );
 });
 
+app.get("/usuarios", (req, res) => {
+  db.query(
+    "SELECT usuario_id, nome, login FROM tbUsuarios",
+    (err, result) => {
+      if (err) {
+        return res.status(500).json({ message: "Erro ao buscar usuários" });
+      }
+      res.json(result);
+    }
+  );
+});
+
 const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => {
