@@ -12,11 +12,11 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const usuariosMock = [
-  { id: 1, nome: "Maria Eduarda", login: "maria.eduarda", perfil: "Administrador" },
-  { id: 2, nome: "João Silva", login: "joao.silva", perfil: "Gerente" },
-  { id: 3, nome: "Ana Costa", login: "ana.costa", perfil: "Desenvolvedor" },
-  { id: 4, nome: "Pedro Souza", login: "pedro.souza", perfil: "Desenvolvedor" },
-  { id: 5, nome: "Juliana Lima", login: "juliana.lima", perfil: "Analista" },
+  { id: 1, nome: "Maria Eduarda", login: "maria.eduarda" },
+  { id: 2, nome: "João Silva", login: "joao.silva" },
+  { id: 3, nome: "Ana Costa", login: "ana.costa" },
+  { id: 4, nome: "Pedro Souza", login: "pedro.souza" },
+  { id: 5, nome: "Juliana Lima", login: "juliana.lima" },
 ];
 
 const Usuarios = () => {
