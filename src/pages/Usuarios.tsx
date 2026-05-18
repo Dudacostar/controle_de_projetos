@@ -53,7 +53,7 @@ const Usuarios = () => {
               </p>
             </div>
             <button
-              onClick={() => navigate("/cadastro")}
+              onClick={() => navigate("/cadastro", { state: { origem: "/usuarios" } })}
               className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-md text-sm font-medium hover:bg-primary/90 transition-colors"
             >
               + Cadastrar Usuário
@@ -82,11 +82,3 @@ const Usuarios = () => {
                 </TableBody>
               </Table>
             </CardContent>
-          </Card>
-        </div>
-      </main>
-    </div>
-  );
-};
-
-export default Usuarios;
