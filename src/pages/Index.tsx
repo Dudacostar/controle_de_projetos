@@ -14,6 +14,7 @@ import mariaEduardaImg from "@/assets/maria-eduarda.png";
 
 const Index = () => {
   const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-background">
       <header className="h-14 flex items-center justify-between border-b px-6 bg-card">
@@ -35,6 +36,12 @@ const Index = () => {
           <button className="relative p-2 rounded-lg hover:bg-muted transition-colors">
             <Bell className="h-4 w-4 text-muted-foreground" />
             <span className="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-destructive" />
+          </button>
+          <button
+            onClick={() => navigate("/usuarios")}
+            className="relative p-2 rounded-lg hover:bg-muted transition-colors"
+          >
+            <Users className="h-4 w-4 text-muted-foreground" />
           </button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -59,7 +66,6 @@ const Index = () => {
           </DropdownMenu>
         </div>
       </header>
-
       <main className="flex-1 overflow-auto p-6">
         <div className="max-w-7xl mx-auto space-y-6">
           <div>
@@ -68,9 +74,7 @@ const Index = () => {
               Visão geral dos projetos e atividades da equipe
             </p>
           </div>
-
           <StatsCards />
-
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="lg:col-span-2 space-y-6">
               <ProjectsList />
