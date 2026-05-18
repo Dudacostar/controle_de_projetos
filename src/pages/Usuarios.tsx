@@ -49,7 +49,7 @@ const Usuarios = () => {
                 Usuários Cadastrados
               </h1>
               <p className="text-sm text-muted-foreground mt-1">
-                Listagem de todos os usuários do sistema
+                Listagem dos usuários do sistema
               </p>
             </div>
             <button
