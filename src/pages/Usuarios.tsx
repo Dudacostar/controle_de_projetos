@@ -71,7 +71,6 @@ const Usuarios = () => {
                   <TableRow>
                     <TableHead>Nome</TableHead>
                     <TableHead>Login</TableHead>
-                    <TableHead>Perfil</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
