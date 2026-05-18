@@ -2,7 +2,7 @@ import { StatsCards } from "@/components/dashboard/StatsCards";
 import { ProjectsList } from "@/components/dashboard/ProjectsList";
 import { TasksList } from "@/components/dashboard/TasksList";
 import { TeamOverview } from "@/components/dashboard/TeamOverview";
-import { Bell, Search, FolderKanban, LogOut } from "lucide-react";
+import { Bell, Search, FolderKanban, LogOut, Users } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import {
   DropdownMenu,
@@ -47,6 +47,10 @@ const Index = () => {
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
+              <DropdownMenuItem onClick={() => navigate("/usuarios")}>
+                <Users className="h-4 w-4 mr-2" />
+                Verificar usuários
+              </DropdownMenuItem>
               <DropdownMenuItem onClick={() => navigate("/")}>
                 <LogOut className="h-4 w-4 mr-2" />
                 Sair
