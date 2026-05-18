@@ -82,3 +82,11 @@ const Usuarios = () => {
                 </TableBody>
               </Table>
             </CardContent>
+          </Card>
+        </div>
+      </main>
+    </div>
+  );
+};
+
+export default Usuarios;
