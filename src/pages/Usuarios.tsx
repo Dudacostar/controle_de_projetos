@@ -41,15 +41,25 @@ const Usuarios = () => {
             <ArrowLeft className="h-4 w-4" />
             Voltar
           </button>
-          <div>
-            <h1 className="text-2xl font-bold font-display flex items-center gap-2">
-              <Users className="h-6 w-6" />
-              Usuários Cadastrados
-            </h1>
-            <p className="text-sm text-muted-foreground mt-1">
-              Listagem de todos os usuários do sistema
-            </p>
+
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-2xl font-bold font-display flex items-center gap-2">
+                <Users className="h-6 w-6" />
+                Usuários Cadastrados
+              </h1>
+              <p className="text-sm text-muted-foreground mt-1">
+                Listagem de todos os usuários do sistema
+              </p>
+            </div>
+            <button
+              onClick={() => navigate("/cadastro")}
+              className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-md text-sm font-medium hover:bg-primary/90 transition-colors"
+            >
+              + Cadastrar Usuário
+            </button>
           </div>
+
           <Card>
             <CardHeader>
               <CardTitle className="text-base">Usuários</CardTitle>
