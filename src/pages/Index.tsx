@@ -39,9 +39,10 @@ const Index = () => {
           </button>
           <button
             onClick={() => navigate("/usuarios")}
-            className="relative p-2 rounded-lg hover:bg-muted transition-colors"
+            className="flex items-center gap-1.5 px-3 py-2 rounded-lg hover:bg-muted transition-colors text-sm text-muted-foreground hover:text-foreground"
           >
-            <Users className="h-4 w-4 text-muted-foreground" />
+            <Users className="h-4 w-4" />
+            Usuários
           </button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
